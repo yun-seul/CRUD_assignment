@@ -1,0 +1,10 @@
+<h1>Search Results</h1>
+{% if results %}
+<ul>
+{% for blog in results %}
+<li><a href="{% url 'detail' blog.id %}">{{ blog.title }}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No results found.</p>
+{% endif %}

@@ -1,0 +1,10 @@
+<h1>"{{query}}" 검색 결과</h1>
+{% if results %}
+    <ul>
+    {% for blog in results %}
+        <li><a href="{% url 'detail' blog.id %}">{{blog.title}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>검색 결과가 없습니다.</p>
+{% endif %}
